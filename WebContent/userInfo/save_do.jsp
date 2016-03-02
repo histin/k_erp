@@ -5,10 +5,10 @@
     <%
     request.setCharacterEncoding("utf-8");
     
-    String id = request.getParameter("id");
-    String pwd = request.getParameter("pwd");
-    String name = request.getParameter("name");
-    String email = request.getParameter("email");
+    String id = request.getParameter("inputId");
+    String pwd = request.getParameter("inputPassword");
+    String name = request.getParameter("inputName");
+    String email = request.getParameter("inputEmail");
     
     try
     {
@@ -42,13 +42,16 @@
     {
     	out.println(e);
     }
-    response.sendRedirect("userList.jsp");
+    out.println("<script>");
+    out.println("alert('정상적으로 가입되었습니다.')");
+    out.println("</script>"); 
+    response.sendRedirect("/kjtour/login.html");
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>K-ERP | 회원가입처리</title>
 </head>
 <body>
 
